@@ -43,6 +43,17 @@ router.get('/getbyid/:dataid', (req, res) => {
         res.json(err);
     });
 })
+router.delete('/delete/:id',(req,res)=>{
+    Model.findByIdAndDelete(req.params.id)
+    .then((result) => {
+        console.log(result);
+        res.json(result);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json(err);
+      });
+});
 
 
 module.exports = router; 

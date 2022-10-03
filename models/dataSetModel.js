@@ -4,14 +4,11 @@ const {Schema, model, Types} = require("../connection");
 const schema = new Schema({
     title : String,
     description : String,
-    size : String,
-    // uploadedBy : {type : Types.ObjectId, ref : "users"},
-    type : String,
-    details : String,
+    year : Number,
+    category : String,
     thumbnail : String,
-    filedata : String,
-    upvotes : {type : Number, default : 0},
-    createdAt : Date,
+    file : String,
+    createdAt : String,
     
 })
 

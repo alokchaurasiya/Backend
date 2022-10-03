@@ -1,5 +1,7 @@
 const express = require('express');
 const userRouter = require('./routers/userRouter');
+const utilRouter = require('./routers/util');
+const dataRouter=require('./routers/dataSetRouter');
 const cors = require("cors");
 
 
@@ -12,18 +14,11 @@ app.use(cors({
 }));
 
 app.use('/user' , userRouter);
-
-app.get('/',(req , res)=>{
-    res.send('Response from express'); 
- 
- })
+app.use('/data',dataRouter);
+app.use('/util',utilRouter);
 
 
-app.get('/home',(req , res)=>{
-    res.send('Response from home'); 
- 
- })
-
+app.use(express.static('./static/uploads'));
 
 app.listen(port,()=>{
     console.log     (' express server started..'); 

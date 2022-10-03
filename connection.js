@@ -9,7 +9,7 @@ mongoose.connect(url)
     console.log("Database connected");
     
 }).catch((err) => {
-    console.log(error);
+    console.log(err);
     
 });
 
